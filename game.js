@@ -27,7 +27,7 @@ function getPlayer(){
 
 // HERE IS WHERE YOU EITHER CREATE AND SAVE THEPLAYER
 // OR GO GET THE PREVIOUSLY SAVED PLAYER
-if(player == "null"){
+if(!player){
    // Save
    getPlayer();
 } else {
@@ -72,9 +72,9 @@ function Monster(name, exp, gold, hp, atk, def, spd) {
     var opt = document.createElement('OPTION'); // Creating option
     opt.innerText = this.name; // Setting innertText attribute
     $(opt).data('monster', self);
-
+    if(opt.val() > 0){
     	monsterList.appendChild(opt); // appending option to select element
-
+}
   };
   this.len = this.name.length;
   this.playerDamage = 0;
@@ -111,7 +111,7 @@ $('#help').click(function() {
 	$('#noHelp').hide();
 	var newli = function(innertext) {
 		var newsli = $('#news').append("<li>- " + innertext + "</li>");
-	}
+	};
 	newli("Created new battle system");
 	newli("Began to make home page");
 	newli("Created webpage structure");
