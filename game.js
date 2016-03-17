@@ -27,14 +27,16 @@ function getPlayer(){
 
 // HERE IS WHERE YOU EITHER CREATE AND SAVE THEPLAYER
 // OR GO GET THE PREVIOUSLY SAVED PLAYER
-if(!player){
-   // Save
+if(localStorage.getItem("player")){
+   // Player exists, Go get it
    getPlayer();
 } else {
-   // Get
+   // Player doesn't exist - Create it and Save in localStorage
    setPlayer();
 }
 // ***********************************************************************************
+
+
 
 if ($('body').attr("id") == "Home") {
 
