@@ -18,7 +18,7 @@ var player = null;
 
 function setPlayer(){
   player = new Player(prompt("What is your username?"), 1, 0, 10, 10, 0, 10, 2, 1, 1);
-  localStorage.setItem("player", JSON.stringify(newPlayer));
+  localStorage.setItem("player", JSON.stringify(Player));
 }
 
 function getPlayer(){
